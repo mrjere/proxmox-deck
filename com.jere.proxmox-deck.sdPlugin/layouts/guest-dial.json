@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+	"id": "proxmox-guest-dial",
+	"controller": "Encoder",
+	"items": [
+		{ "key": "name", "type": "text", "rect": [10, 6, 136, 22], "font": { "size": 16, "weight": 600 }, "alignment": "left", "color": "#e6edf3", "text-overflow": "ellipsis", "value": "Proxmox" },
+		{ "key": "pos", "type": "text", "rect": [150, 6, 44, 20], "font": { "size": 12, "weight": 400 }, "alignment": "right", "color": "#8b949e", "value": "" },
+		{ "key": "sub", "type": "text", "rect": [10, 30, 184, 16], "font": { "size": 12, "weight": 400 }, "alignment": "left", "color": "#8b949e", "text-overflow": "ellipsis", "value": "Connecting…" },
+		{ "key": "cpu_label", "type": "text", "rect": [10, 51, 34, 16], "font": { "size": 12, "weight": 400 }, "alignment": "left", "color": "#8b949e", "value": "CPU" },
+		{ "key": "cpu", "type": "bar", "rect": [46, 55, 104, 8], "value": 0, "subtype": 4, "border_w": 0, "bar_bg_c": "#2b3038", "bar_fill_c": "#3fb950" },
+		{ "key": "cpu_val", "type": "text", "rect": [154, 51, 40, 16], "font": { "size": 12, "weight": 400 }, "alignment": "right", "color": "#e6edf3", "value": "" },
+		{ "key": "mem_label", "type": "text", "rect": [10, 74, 34, 16], "font": { "size": 12, "weight": 400 }, "alignment": "left", "color": "#8b949e", "value": "RAM" },
+		{ "key": "mem", "type": "bar", "rect": [46, 78, 104, 8], "value": 0, "subtype": 4, "border_w": 0, "bar_bg_c": "#2b3038", "bar_fill_c": "#3fb950" },
+		{ "key": "mem_val", "type": "text", "rect": [154, 74, 40, 16], "font": { "size": 12, "weight": 400 }, "alignment": "right", "color": "#e6edf3", "value": "" }
+	]
+}

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Container / VM</title>
+		<link rel="stylesheet" href="pi.css" />
+	</head>
+	<body>
+		<h2>This key</h2>
+		<div class="field"><label for="guest">Guest</label>
+			<select id="guest" data-setting="guest" data-source="guests"><option value="">Loading…</option></select></div>
+		<p class="note">Press: open in the Proxmox web UI. Hold for half a second: refresh now (you will see a tick). View-only: start and shut down guests in the web UI.</p>
+		<hr />
+		<div id="connection"></div>
+		<script src="pi.js"></script>
+	</body>
+</html>

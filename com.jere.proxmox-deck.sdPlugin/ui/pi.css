@@ -1,0 +1,48 @@
+/* Dark styling to sit comfortably inside the Stream Deck app. */
+:root {
+	color-scheme: dark;
+	--bg: #2d2d2d;
+	--field: #3d3d3d;
+	--border: #4a4a4a;
+	--text: #d8d8d8;
+	--muted: #9a9a9a;
+	--ok: #3fb950;
+	--bad: #f85149;
+	--accent: #5b9bf8;
+}
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	padding: 8px 10px 16px;
+	background: var(--bg);
+	color: var(--text);
+	font: 12px/1.4 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+h2 { font-size: 12px; font-weight: 600; margin: 4px 0 8px; color: var(--muted); }
+.field { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 8px; margin: 6px 0; }
+.field > label { color: var(--muted); text-align: right; }
+input[type="text"], input[type="password"], input[type="number"], select {
+	width: 100%; padding: 4px 6px; background: var(--field); color: var(--text);
+	border: 1px solid var(--border); border-radius: 3px; font: inherit;
+}
+input[type="number"] { width: 64px; }
+input:focus, select:focus, button:focus-visible { outline: 1px solid var(--accent); outline-offset: 0; }
+.inline { display: flex; align-items: center; gap: 6px; }
+.check { display: flex; align-items: center; gap: 6px; color: var(--text); }
+button {
+	padding: 4px 12px; background: var(--field); color: var(--text);
+	border: 1px solid var(--border); border-radius: 3px; font: inherit; cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+.hint, .note { color: var(--muted); margin: 2px 0 8px 98px; font-size: 11px; }
+.note { margin-left: 0; }
+.status { margin: 6px 0 0 98px; min-height: 1.4em; }
+.status.ok { color: var(--ok); }
+.status.error { color: var(--bad); }
+details { margin: 4px 0 12px; }
+summary { cursor: pointer; color: var(--text); font-weight: 600; margin-bottom: 6px; }
+details.help { margin: 10px 0 0; padding: 8px; background: #262626; border-radius: 4px; }
+details.help summary { font-weight: 400; color: var(--accent); }
+pre { white-space: pre-wrap; word-break: break-all; background: #1e1e1e; padding: 6px; border-radius: 3px; font-size: 10.5px; }
+code { background: #1e1e1e; padding: 0 3px; border-radius: 2px; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 10px 0; }

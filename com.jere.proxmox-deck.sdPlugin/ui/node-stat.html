@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Host stat</title>
+		<link rel="stylesheet" href="pi.css" />
+	</head>
+	<body>
+		<h2>This key</h2>
+		<div class="field"><label for="metric">Show</label>
+			<select id="metric" data-setting="metric" data-default="cpu">
+				<option value="cpu">CPU</option>
+				<option value="mem">RAM</option>
+				<option value="disk">Disk (root)</option>
+				<option value="iowait">IO delay</option>
+				<option value="swap">Swap</option>
+				<option value="load">Load average</option>
+				<option value="netin">Network in</option>
+				<option value="netout">Network out</option>
+				<option value="uptime">Uptime</option>
+			</select></div>
+		<p class="note">Press: open in the Proxmox web UI. Hold for half a second: refresh now (you will see a tick).</p>
+		<hr />
+		<div id="connection"></div>
+		<script src="pi.js"></script>
+	</body>
+</html>

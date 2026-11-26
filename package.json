@@ -1,0 +1,28 @@
+{
+  "name": "proxmox-deck",
+  "version": "0.2.0",
+  "private": true,
+  "description": "View-only Proxmox VE monitoring for Stream Deck + (keys, dials and touch strip).",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node build.mjs --tests && node test/dist/run-tests.js && node test/dist/e2e.js && node test/pi-test.mjs",
+    "validate": "streamdeck validate com.jere.proxmox-deck.sdPlugin",
+    "pack": "npm run build && streamdeck pack com.jere.proxmox-deck.sdPlugin --output dist --force"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.6",
+    "@elgato/utils": "0.7.0"
+  },
+  "devDependencies": {
+    "@elgato/cli": "^1.10.5",
+    "@types/node": "^24.0.0",
+    "@types/ws": "^8.18.2",
+    "esbuild": "^0.28.2",
+    "jsdom": "^31.0.1",
+    "typescript": "^7.0.2"
+  }
+}

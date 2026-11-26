@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Tasks & backups</title>
+		<link rel="stylesheet" href="pi.css" />
+	</head>
+	<body>
+		<h2>This dial</h2>
+		<div class="field"><label for="filter">Show</label>
+			<select id="filter" data-setting="filter" data-default="all">
+				<option value="all">All recent tasks</option>
+				<option value="backups">Backups only</option>
+				<option value="problems">Failures and warnings only</option>
+			</select></div>
+		<p class="note">Newest first; turn for older tasks. The bottom line counts the last 24 hours. Console sessions are left out. Press: open in the web UI. Hold, or tap the strip: refresh now (the strip shows ✓ Refreshed).</p>
+		<hr />
+		<div id="connection"></div>
+		<script src="pi.js"></script>
+	</body>
+</html>

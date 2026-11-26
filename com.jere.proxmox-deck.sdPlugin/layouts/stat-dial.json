@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+	"id": "proxmox-stat-dial",
+	"controller": "Encoder",
+	"items": [
+		{ "key": "name", "type": "text", "rect": [10, 6, 136, 20], "font": { "size": 15, "weight": 600 }, "alignment": "left", "color": "#e6edf3", "text-overflow": "ellipsis", "value": "Proxmox" },
+		{ "key": "pos", "type": "text", "rect": [150, 6, 44, 20], "font": { "size": 12, "weight": 400 }, "alignment": "right", "color": "#8b949e", "value": "" },
+		{ "key": "value", "type": "text", "rect": [10, 28, 184, 36], "font": { "size": 28, "weight": 700 }, "alignment": "left", "color": "#e6edf3", "text-overflow": "ellipsis", "value": "…" },
+		{ "key": "bar", "type": "bar", "rect": [10, 67, 184, 10], "value": 0, "subtype": 4, "border_w": 0, "bar_bg_c": "#2b3038", "bar_fill_c": "#3fb950" },
+		{ "key": "detail", "type": "text", "rect": [10, 80, 184, 16], "font": { "size": 12, "weight": 400 }, "alignment": "left", "color": "#8b949e", "text-overflow": "ellipsis", "value": "Connecting…" }
+	]
+}

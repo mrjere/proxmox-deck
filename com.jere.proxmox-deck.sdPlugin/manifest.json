@@ -1,0 +1,163 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"UUID": "com.jere.proxmox-deck",
+	"Name": "Proxmox Deck",
+	"Version": "0.2.0.0",
+	"Author": "Jere",
+	"Description": "Live, view-only Proxmox VE stats on keys and the Stream Deck + touch strip: host metrics, containers and VMs, storage and recent tasks/backups.",
+	"Icon": "imgs/plugin/icon",
+	"Category": "Proxmox Deck",
+	"CategoryIcon": "imgs/plugin/category",
+	"CodePath": "bin/plugin.js",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		},
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		}
+	],
+	"Nodejs": {
+		"Version": "24"
+	},
+	"Actions": [
+		{
+			"UUID": "com.jere.proxmox-deck.node-stat",
+			"Name": "Host stat",
+			"Tooltip": "One host metric (CPU, RAM, disk, IO delay, swap, load, network or uptime) with a live graph. Press: open the node. Hold: refresh.",
+			"Icon": "imgs/actions/node-stat",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/node-stat.html",
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/node-stat-key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.jere.proxmox-deck.guest",
+			"Name": "Container / VM",
+			"Tooltip": "Status, CPU and RAM for one container or VM (view-only). Press: open it in the web UI. Hold: refresh.",
+			"Icon": "imgs/actions/guest",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/guest.html",
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/guest-key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.jere.proxmox-deck.node-dial",
+			"Name": "Host dial",
+			"Tooltip": "Host stats on the touch strip. Turn to change metric.",
+			"Icon": "imgs/actions/node-dial",
+			"Controllers": [
+				"Encoder"
+			],
+			"PropertyInspectorPath": "ui/node-dial.html",
+			"Encoder": {
+				"layout": "layouts/stat-dial.json",
+				"TriggerDescription": {
+					"Rotate": "Change metric",
+					"Push": "Open web UI (hold: refresh)",
+					"Touch": "Refresh now",
+					"LongTouch": "Refresh now"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/node-dial-key"
+				}
+			]
+		},
+		{
+			"UUID": "com.jere.proxmox-deck.guest-dial",
+			"Name": "Guest carousel",
+			"Tooltip": "Your containers and VMs on the touch strip. Turn to step through them.",
+			"Icon": "imgs/actions/guest-dial",
+			"Controllers": [
+				"Encoder"
+			],
+			"PropertyInspectorPath": "ui/guest-dial.html",
+			"Encoder": {
+				"layout": "layouts/guest-dial.json",
+				"TriggerDescription": {
+					"Rotate": "Next / previous guest",
+					"Push": "Open web UI (hold: refresh)",
+					"Touch": "Refresh now",
+					"LongTouch": "Refresh now"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/guest-dial-key"
+				}
+			]
+		},
+		{
+			"UUID": "com.jere.proxmox-deck.storage-dial",
+			"Name": "Storage carousel",
+			"Tooltip": "Your storage (local, LVM, ZFS, NAS shares) on the touch strip. Turn to step through.",
+			"Icon": "imgs/actions/storage-dial",
+			"Controllers": [
+				"Encoder"
+			],
+			"PropertyInspectorPath": "ui/storage-dial.html",
+			"Encoder": {
+				"layout": "layouts/stat-dial.json",
+				"TriggerDescription": {
+					"Rotate": "Next / previous storage",
+					"Push": "Open web UI (hold: refresh)",
+					"Touch": "Refresh now",
+					"LongTouch": "Refresh now"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/storage-dial-key"
+				}
+			]
+		},
+		{
+			"UUID": "com.jere.proxmox-deck.tasks-dial",
+			"Name": "Tasks & backups",
+			"Tooltip": "Recent tasks on the host, newest first. Set it to Backups to see whether last night's backup worked.",
+			"Icon": "imgs/actions/tasks-dial",
+			"Controllers": [
+				"Encoder"
+			],
+			"PropertyInspectorPath": "ui/tasks-dial.html",
+			"Encoder": {
+				"layout": "layouts/tasks-dial.json",
+				"TriggerDescription": {
+					"Rotate": "Older / newer task",
+					"Push": "Open web UI (hold: refresh)",
+					"Touch": "Refresh now",
+					"LongTouch": "Refresh now"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/tasks-dial-key"
+				}
+			]
+		}
+	]
+}
